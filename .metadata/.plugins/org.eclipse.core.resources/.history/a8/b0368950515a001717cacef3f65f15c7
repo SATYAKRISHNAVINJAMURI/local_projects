@@ -1,0 +1,15 @@
+package exam;
+
+public class Check {
+	int i;
+	public void show(){
+		System.out.println(i);
+	}
+	public class B{
+		int j;
+		public void show(){
+			System.out.println(i);
+		}
+		
+	}
+}

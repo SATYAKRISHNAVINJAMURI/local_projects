@@ -1,0 +1,14 @@
+1. Write a program using If, If-else, If-else-if to print the largest of given numbers.
+
+2. Write a program to print Employee Salary details using switch statement. The employee id can be given as an input for this loop and you can collect the employee id and salary details as an input from the user at the start of the program.
+
+3. Write Java program to allow the user to input his/her age. Then the program will show if the person is eligible to vote. A person who is eligible to vote must be older than or equal to 18 years old.
+
+4. Using a Java array of 10 integers, implement the simple bubble sort algorithm in ascending order.
+
+5. Write Java program to prompt the user to choose the correct answer from a list of answer choices for a question (A typical MCQ Question and answer).
+
+6. Write a Program using Abstract classes and methods to display Area of Triangle, Rectangle and Square.
+
+7. Write a program to demostrate Final variable to display Employee Details.
+

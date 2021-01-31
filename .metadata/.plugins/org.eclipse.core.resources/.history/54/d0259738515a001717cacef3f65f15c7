@@ -1,0 +1,12 @@
+package exam;
+
+public class Test {
+	public void main(String[]agrs){
+		Check obj = new Check();
+		obj.i=10;
+		Check.B  obj2 = obj.new B();
+		obj2.j = 9;
+		obj.show();
+		obj2.show();
+	}
+}

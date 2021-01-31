@@ -1,0 +1,73 @@
+package com.satya.money.analysing;
+
+import java.util.List;
+
+import com.satya.money.entity.CandleStick;
+
+import org.junit.Assert;
+
+public class AnalysingEqualAmoutTrendReversalConfirmationStrategy extends Strategy{
+	public boolean isBuyTrade(CandleStick prePreviousCS, CandleStick previousCS){
+		Assert.assertEquals(prePreviousCS.isBullish(), previousCS.isBullish());
+		return (prePreviousCS.isBullish() && previousCS.isBullish());
+	}
+	public boolean isTradeExecuted(CandleStick prePreviousCS, CandleStick previousCS){
+		return (prePreviousCS.isBullish() == previousCS.isBullish());
+	}
+	@Override
+	public int getNegativeCount(List<CandleStick> csList) {
+		int count = 0;
+		CandleStick prePreviousCS;
+		CandleStick previousCS = null;
+		CandleStick currentCS = null;
+		for(CandleStick cs: csList){
+			if(isIndicisive(cs)) continue;
+			prePreviousCS = previousCS;
+			previousCS = currentCS;
+			currentCS = cs;
+			if(previousCS != null && currentCS != null && prePreviousCS != null){
+				if(isTradeExecuted(prePreviousCS, previousCS) &&
+						(isBuyTrade(prePreviousCS, previousCS) !=
+						currentCS.isBullish())){
+					count++;
+				}
+			}
+		
+		}
+		return count;
+	}
+
+	@Override
+	public int getPositiveCount(List<CandleStick> csList) {
+		int count = 0;
+		CandleStick prePreviousCS;
+		CandleStick previousCS = null;
+		CandleStick currentCS = null;
+		for(CandleStick cs: csList){
+			if(isIndicisive(cs)) continue;
+			prePreviousCS = previousCS;
+			previousCS = currentCS;
+			currentCS = cs;
+			if(previousCS != null && currentCS != null && prePreviousCS != null){
+				if(isTradeExecuted(prePreviousCS, previousCS) &&
+						(isBuyTrade(prePreviousCS, previousCS) ==
+						currentCS.isBullish())){
+					count++;
+				}
+			}
+		
+		}
+		return count;
+	}
+	
+	
+	public static void main(String[] args) {
+		Strategy aems = new AnalysingEqualAmoutTrendReversalConfirmationStrategy();
+		String from = "2020.05.01 00:00";
+		String to = "2020.05.31 23:59";
+//		aems.printPercentagesForAPeriod(from, to);
+//		aems.printPositiveAndNegativePercentageForIntervals(from, to, 60*24);
+		System.out.println("done");
+
+	}
+}

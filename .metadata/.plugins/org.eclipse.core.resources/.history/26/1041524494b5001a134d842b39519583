@@ -1,0 +1,11 @@
+package com.satya.money.common;
+
+public class ApplicationConstants {
+	private ApplicationConstants(){
+	}
+	public static final int RECORD_LENGTH = 7;
+	public static final String TIME_STAMP_FORMAT = "yyyy.MM.dd HH:mm";
+	public static final String LOGGER_OUTPUT_FILE_PATH = "log.txt";
+	public static final String DATA_FILE_PATH = "C:\\Users\\SATYA KRISHNA VINJAM\\Downloads\\data\\data-usd-jpy.csv";
+	public static final String TEST_DATA_FILE_PATH = "C:\\Users\\SATYA KRISHNA VINJAM\\Desktop\\test.data";
+}

@@ -1,0 +1,17 @@
+package com.satya.money.helper;
+
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+
+import com.satya.money.common.ApplicationConstants;
+import com.satya.money.entity.CandleStick;
+
+public class DataAnalysisHelper {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
